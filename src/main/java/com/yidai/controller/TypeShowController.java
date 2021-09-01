@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @author yidai
+ */
 @Controller
 public class TypeShowController {
 

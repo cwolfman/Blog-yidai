@@ -3,6 +3,9 @@ package com.yidai.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * @author yidai
+ */
 public class MD5Utils {
 
     /**

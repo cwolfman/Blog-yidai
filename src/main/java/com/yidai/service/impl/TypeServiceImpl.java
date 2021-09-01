@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author yidai
+ */
 @Service
 public class TypeServiceImpl implements TypeService {
 

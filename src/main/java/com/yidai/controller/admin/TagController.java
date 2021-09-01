@@ -14,6 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * @author yidai
+ */
 @Controller
 @RequestMapping("/admin")
 public class TagController {

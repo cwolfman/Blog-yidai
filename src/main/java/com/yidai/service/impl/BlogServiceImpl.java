@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/**
+ * @author yidai
+ */
 @Service
 public class BlogServiceImpl implements BlogService {
 

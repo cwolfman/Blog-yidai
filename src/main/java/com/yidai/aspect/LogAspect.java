@@ -13,7 +13,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author: 一呆
+ * @author: yidai
  * @date: 2021/8/31 23:09
  * @description: 定义切面
  */
@@ -70,7 +70,7 @@ public class LogAspect {
     }
 
     /**
-     * @author: 一呆
+     * @author: yidai
      * @date: 2021/8/31 23:09
      * @description: 用于封装请求信息
      */
