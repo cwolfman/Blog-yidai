@@ -53,6 +53,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public List<Blog> getByWallpaperId(Long wallpaperId) {
+        return null;
+    }
+
+    @Override
     public List<Blog> getIndexBlog() {
         return blogDao.getIndexBlog();
     }

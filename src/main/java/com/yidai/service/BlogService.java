@@ -35,6 +35,11 @@ public interface BlogService {
     List<Blog> getByTagId(Long tagId);
 
     /**
+     * @description: 根据壁纸id获取博客
+     */
+    List<Blog> getByWallpaperId(Long wallpaperId);
+
+    /**
      * @description: 主页博客展示
      */
     List<Blog> getIndexBlog();
