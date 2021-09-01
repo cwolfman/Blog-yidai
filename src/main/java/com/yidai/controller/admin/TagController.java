@@ -1,9 +1,7 @@
 package com.yidai.controller.admin;
 
 import com.yidai.pojo.Tag;
-import com.yidai.pojo.Type;
 import com.yidai.service.TagService;
-import com.yidai.service.TypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

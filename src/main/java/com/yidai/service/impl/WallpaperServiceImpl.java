@@ -4,6 +4,7 @@ import com.yidai.dao.WallpaperDao;
 import com.yidai.pojo.Wallpaper;
 import com.yidai.service.WallpaperService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * @Date 2021/9/2 1:11
  * @Description TODO
  */
+@Service
 public class WallpaperServiceImpl implements WallpaperService {
 
     @Autowired
