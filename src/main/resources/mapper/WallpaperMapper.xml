@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidai.dao.WallpaperDao">
+
+    <select id="getWallpaper" resultType="Wallpaper">
+        select id, name
+        from yidai_blog.t_wallpaper
+        where id = #{id}
+    </select>
+
+    <insert id="saveWallpaper" parameterType="Wallpaper">
+        insert into yidai_blog.t_wallpaper
+        values (#{id}, #{name});
+    </insert>
+
+    <resultMap id="wallpaper" type="Wallpaper">
+        <id property="id" column="tid"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+        </collection>
+    </resultMap>
+
+    <select id="getWallpaperByName" resultType="Wallpaper">
+        select *
+        from yidai_blog.t_wallpaper
+        where name = #{name}
+    </select>
+
+    <select id="getAllWallpaper" resultType="Wallpaper">
+        select *
+        from yidai_blog.t_wallpaper
+    </select>
+
+    <select id="getBlogWallpaper" resultMap="wallpaper">
+        select t.id tid, t.name, b.id bid, b.title
+        from t_wallpaper t,
+             t_blog b,
+             t_blgo_wallpaper bw
+        where t.id = bw.wallpaper_id
+          and b.id = bw.blog_id
+    </select>
+
+    <update id="updateWallpaper" parameterType="Wallpaper">
+        update yidai_blog.t_wallpaper
+        set name = #{name}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteWallpaper">
+        delete
+        from yidai_blog.t_wallpaper
+        where id = #{id}
+    </delete>
+
+</mapper>
