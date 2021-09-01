@@ -33,10 +33,14 @@ public class TypeShowController {
         //开启分页
         PageHelper.startPage(pagenum, 100);
         List<Type> types = typeService.getBlogType();
-        //-1从导航点过来的
-        if (id != null && id == -1) {
+
+        if (id == null) {
+            return "error";
+        } else if (id == -1) {
+            // -1从导航点过来的
             id = types.get(0).getId();
         }
+
         List<Blog> blogs = blogService.getByTypeId(id);
         PageInfo<Blog> pageInfo = new PageInfo<>(blogs);
         model.addAttribute("types", types);

@@ -29,7 +29,12 @@ public class CommentController {
     @Value("${comment.avatar}")
     private String avatar;
 
-    //展示留言
+    /**
+     * @Param:
+     * @return:
+     * @date: 2021/9/1 16:45
+     * @description:  展示留言
+     */
     @GetMapping("/comments/{blogId}")
     public String comments(@PathVariable Long blogId, Model model) {
         model.addAttribute("comments", commentService.getCommentByBlogId(blogId));
@@ -37,7 +42,12 @@ public class CommentController {
         return "blog :: commentList";
     }
 
-    //提交留言
+    /**
+     * @Param:
+     * @return:
+     * @date: 2021/9/1 16:45
+     * @description: 提交留言
+     */
     @PostMapping("/comments")
     public String post(Comment comment, HttpSession session) {
         Long blogId = comment.getBlog().getId();

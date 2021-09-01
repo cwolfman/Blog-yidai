@@ -37,7 +37,12 @@ public class BlogController {
         model.addAttribute("tags", tagService.getAllTag());
     }
 
-    //后台显示博客列表
+    /**
+     * @Param:
+     * @return:
+     * @date: 2021/9/1 后台显示博客列表16:45
+     * @description:
+     */
     @GetMapping("/blogs")
     public String blogs(@RequestParam(required = false, defaultValue = "1", value = "pagenum") int pagenum, Model model) {
         PageHelper.startPage(pagenum, 5);

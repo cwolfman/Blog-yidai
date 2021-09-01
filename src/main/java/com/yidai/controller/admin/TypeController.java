@@ -45,8 +45,13 @@ public class TypeController {
         return "admin/types-input";
     }
 
+    /**
+     * @Param:
+     * @return:
+     * @date: 2021/9/1 16:46
+     * @description: 新增
+     */
     @PostMapping("/types")
-    //新增
     public String addType(Type type, RedirectAttributes attributes) {
         Type t = typeService.getTypeByName(type.getName());
         if (t != null) {

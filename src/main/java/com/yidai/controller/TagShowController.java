@@ -33,10 +33,14 @@ public class TagShowController {
         //开启分页
         PageHelper.startPage(pagenum, 100);
         List<Tag> tags = tagService.getBlogTag();
-        //-1从导航点过来的
-        if (id != null && id == -1) {
+
+        if (id == null) {
+            return "error";
+        } else if (id == -1) {
+            // -1从导航点过来的
             id = tags.get(0).getId();
         }
+
         List<Blog> blogs = blogService.getByTagId(id);
         for (Blog blog : blogs) {
             System.out.println(blog);

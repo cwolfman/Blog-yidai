@@ -47,8 +47,13 @@ public class TagController {
         return "admin/tags-input";
     }
 
+    /**
+     * @Param:
+     * @return:
+     * @date: 2021/9/1 16:46
+     * @description:  新增
+     */
     @PostMapping("/tags")
-    //新增
     public String addTag(Tag tag, RedirectAttributes attributes) {
         Tag t = tagService.getTagByName(tag.getName());
         if (t != null) {
