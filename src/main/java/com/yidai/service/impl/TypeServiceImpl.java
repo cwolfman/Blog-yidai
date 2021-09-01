@@ -19,7 +19,9 @@ public class TypeServiceImpl implements TypeService {
     @Autowired
     private TypeDao typeDao;
 
-    //事务注解
+    /**
+     * @description: 事务注解
+     */
     @Transactional
     @Override
     public int saveType(Type type) {
