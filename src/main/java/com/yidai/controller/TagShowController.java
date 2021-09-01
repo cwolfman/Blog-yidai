@@ -34,7 +34,7 @@ public class TagShowController {
         PageHelper.startPage(pagenum, 100);
         List<Tag> tags = tagService.getBlogTag();
         //-1从导航点过来的
-        if (id == -1) {
+        if (id != null && id == -1) {
             id = tags.get(0).getId();
         }
         List<Blog> blogs = blogService.getByTagId(id);

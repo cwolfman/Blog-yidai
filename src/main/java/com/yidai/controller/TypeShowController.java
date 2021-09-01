@@ -34,7 +34,7 @@ public class TypeShowController {
         PageHelper.startPage(pagenum, 100);
         List<Type> types = typeService.getBlogType();
         //-1从导航点过来的
-        if (id == -1) {
+        if (id != null && id == -1) {
             id = types.get(0).getId();
         }
         List<Blog> blogs = blogService.getByTypeId(id);
